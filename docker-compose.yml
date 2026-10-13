@@ -1,0 +1,16 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://mms.kapplabs.com}
+    image: kapplabs-web
+    container_name: kapplabs-web
+    restart: unless-stopped
+    # No host ports: the front-door nginx reaches it as http://kapplabs-web:80 over shared_web.
+    networks:
+      - shared_web
+
+networks:
+  shared_web:
+    external: true

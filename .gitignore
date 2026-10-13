@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+*.tsbuildinfo
+.env*.local
+.env
+.DS_Store
+
+# Original Vite projects; their code now lives in app/ and they are kept on disk only.
+Aram-home-main/
+aram-temple-main/
+aram-trusts-main/
