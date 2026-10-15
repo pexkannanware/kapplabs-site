@@ -49,15 +49,12 @@
 .site-header { position: fixed; z-index: 40; inset: 0 0 auto; height: var(--header-h); transition: background .45s var(--ease), box-shadow .45s var(--ease), backdrop-filter .45s; }
 .site-header.is-scrolled { background: #fbf9f5e0; box-shadow: 0 1px 0 var(--line-soft), 0 10px 30px -24px #2a242133; backdrop-filter: blur(14px) saturate(1.15); -webkit-backdrop-filter: blur(14px) saturate(1.15); }
 .header-inner { display: flex; max-width: 1320px; height: 100%; margin: 0 auto; padding: 0 var(--gutter); align-items: center; }
-.brand { display: inline-flex; align-items: center; gap: 12px; color: var(--wine); text-decoration: none; }
-.brand img { width: 46px; height: auto; }
-.brand-word { font-size: 15px; font-weight: 600; letter-spacing: .12em; }
-.brand-word b { font-weight: 500; color: var(--gold); }
-.brand-tag { padding-left: 12px; border-left: 1px solid var(--line); color: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.brand-light { color: #f6ecdf; }
-.brand-light img { filter: brightness(0) invert(.93); }
-.brand-light .brand-word b { color: var(--gold-soft); }
-.brand-light .brand-tag { border-color: #ffffff2a; color: #b9ab9b; }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--ink); text-decoration: none; }
+.brand-mark { width: 44px; height: 22px; flex: none; background: #58110c; mask: center / contain no-repeat; -webkit-mask: center / contain no-repeat; }
+.brand-word { display: grid; white-space: nowrap; font-family: 'Cinzel', Georgia, serif; font-weight: 600; font-size: .95rem; letter-spacing: .18em; line-height: 1.1; }
+.brand-tag { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; font-size: .625rem; letter-spacing: .28em; text-transform: uppercase; opacity: .7; }
+.brand-light { color: #f3ece1; }
+.brand-light .brand-mark { background: currentColor; }
 .main-nav { display: flex; margin-left: auto; gap: clamp(20px, 2.6vw, 38px); }
 .main-nav a { position: relative; padding: 6px 0; color: var(--ink-soft); font-size: 14.5px; text-decoration: none; transition: color .25s; }
 .main-nav a::after { position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--wine); content: ''; transform: scaleX(0); transform-origin: right; transition: transform .35s var(--ease); }
@@ -452,7 +449,6 @@
 @media (max-width: 600px) {
   .header-cta { display: none; }
   .menu-toggle { margin-left: auto; }
-  .brand-tag { display: none; }
   .hero-actions .button { flex: 1 1 100%; }
   .hero-actions .text-link { display: none; }
   .areas { grid-template-columns: 1fr; }

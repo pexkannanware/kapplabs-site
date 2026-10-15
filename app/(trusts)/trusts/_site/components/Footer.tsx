@@ -20,7 +20,7 @@ export function Footer() {
           </div>
           <nav className="footer-col" aria-label="Solutions">
             <strong>Solutions</strong>
-            <a href={links.mutts}>Mutts</a>
+            <a href={links.mutts}>Mathas</a>
             <a href={links.temples}>Temples</a>
             <a href="#home" aria-current="page">Trusts</a>
           </nav>

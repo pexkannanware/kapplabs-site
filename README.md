@@ -11,7 +11,7 @@ be hosted on their own domain. No backend, database or login lives here.
 | `/aram` | ARAM ERP home (links to Trusts, Temples and Mathas) |
 | `/trusts` | ARAM ERP for Trusts |
 | `/temple` | ARAM ERP for Temples |
-| `/mms` | ARAM ERP for Mathas (mutt ERP) |
+| `/mms` | ARAM ERP for Mathas |
 | `/kapplabs/office-of-the-cfo-ai-agents` | CFO AI Agents product page |
 | `/platform-thesis`, `/why-now`, `/model`, `/edge`, `/launch` | Story pages |
 | `/contact`, `/security`, `/privacy`, `/terms` | Company / legal pages |

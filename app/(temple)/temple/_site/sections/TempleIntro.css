@@ -5,8 +5,8 @@
 .intro__copy { display: grid; gap: 20px; justify-items: start; }
 .intro__points { display: grid; gap: 12px; margin-top: 8px; }
 .intro__points li { display: flex; align-items: flex-start; gap: 12px; font-size: var(--text-md); color: var(--ink-2); }
-.intro__points svg { flex: none; margin-top: 4px; color: var(--maroon); }
-.intro__link { color: var(--maroon); }
+.intro__points svg { flex: none; margin-top: 4px; color: var(--green); }
+.intro__link { color: var(--green); }
 
 /* Dashboard on a laptop, with one floating note. */
 .showcase { position: relative; }

@@ -614,14 +614,14 @@ export function initAramMms(root: HTMLElement): Cleanup {
 
         const formData = new FormData(contactForm);
         const name = String(formData.get("name") || "").trim();
-        const mutt = String(formData.get("mutt") || "").trim();
+        const matha = String(formData.get("matha") || "").trim();
         const email = String(formData.get("email") || "").trim();
         const phone = String(formData.get("phone") || "").trim();
         const message = String(formData.get("message") || "").trim();
         const subject = encodeURIComponent("Aram ERP — Demo request");
         const bodyText = [
           `Name: ${name}`,
-          `Mutt / Institution: ${mutt || "Not provided"}`,
+          `Matha / Institution: ${matha || "Not provided"}`,
           `Email: ${email}`,
           `Phone: ${phone || "Not provided"}`,
           "",

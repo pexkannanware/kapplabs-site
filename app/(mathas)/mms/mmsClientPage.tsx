@@ -19,12 +19,16 @@ export default function MmsClientPage() {
     <div ref={rootRef} className="aram-mms">
       <header className="site-nav" aria-label="Primary navigation">
         <div className="nav-shell">
-          <a href="#overview" className="brand-block" data-scroll>
-            <img src="/mms/logo-aram.png" alt="Aram ERP logo" className="site-logo" />
-            <div className="brand-text">
-              <strong>Aram ERP</strong>
-              <span>Unified ERP for Mutts.</span>
-            </div>
+          <a href="#overview" className="brand-block aram-brand" data-scroll aria-label="ARAM ERP for Mathas — back to top">
+            <span
+              className="aram-brand__mark"
+              style={{ maskImage: "url(/mms/aram-mark.png)", WebkitMaskImage: "url(/mms/aram-mark.png)" }}
+              aria-hidden="true"
+            />
+            <span className="aram-brand__word">
+              ARAM ERP
+              <span className="aram-brand__tag">For Mathas</span>
+            </span>
           </a>
           <button className="menu-toggle" aria-expanded="false" aria-label="Open menu">
             <span></span>
@@ -142,7 +146,7 @@ export default function MmsClientPage() {
                 Embracing the Future.
               </h2>
               <p>
-                Behind every Mutt is a small circle of people carrying receipts, approvals,
+                Behind every Matha is a small circle of people carrying receipts, approvals,
                 payments, records, and committee questions—often across notebooks, spreadsheets, and
                 message threads.
               </p>
@@ -159,7 +163,7 @@ export default function MmsClientPage() {
           <div className="feature-section-heading">
             <div className="mutt-flow-title-row">
               <span className="temple-kicker">The complete office, connected</span>
-              <h2>Everything Your Mutt Needs, in One Flow</h2>
+              <h2>Everything Your Matha Needs, in One Flow</h2>
               <p className="lede">
                 Daily work moves through one secure system—from the first receipt to the final
                 committee report.
@@ -253,7 +257,7 @@ export default function MmsClientPage() {
               <div
                 className="comparison-panel-visual"
                 role="img"
-                aria-label="A priest recording Mutt activity in a handwritten ledger"
+                aria-label="A priest recording Matha activity in a handwritten ledger"
               ></div>
               <span className="comparison-label">Before · Scattered tools</span>
               <h3>Too much depends on memory</h3>
@@ -275,7 +279,7 @@ export default function MmsClientPage() {
               <div
                 className="comparison-panel-visual"
                 role="img"
-                aria-label="A Mutt administrator working with a laptop and connected digital tools"
+                aria-label="A Matha administrator working with a laptop and connected digital tools"
               ></div>
               <span className="comparison-label">After · One connected system</span>
               <h3>Every answer has a place</h3>
@@ -510,7 +514,7 @@ export default function MmsClientPage() {
             <div className="section-shell">
               <div className="section-heading reveal center-heading">
                 <span className="impact-kicker">Six foundations of a dependable system</span>
-                <h2>Why Mutts Choose Us</h2>
+                <h2>Why Mathas Choose Us</h2>
                 <p className="lede">
                   Turn the manuscript to explore the operational details that make daily adoption
                   easier.
@@ -532,14 +536,14 @@ export default function MmsClientPage() {
                     id="manuscript-book"
                     role="group"
                     aria-roledescription="carousel"
-                    aria-label="Why Mutts choose us — palm-leaf manuscript"
+                    aria-label="Why Mathas choose us — palm-leaf manuscript"
                   >
                     <article className="palm-leaf" data-index="0">
                       <span className="palm-leaf-numeral">Page 01</span>
-                      <h3>Purpose-Built for Mutts</h3>
+                      <h3>Purpose-Built for Mathas</h3>
                       <span className="palm-leaf-rule" aria-hidden="true"></span>
                       <p>
-                        Donation-first workflows reflect how Mutt offices receive funds, manage
+                        Donation-first workflows reflect how Matha offices receive funds, manage
                         sevas, spend, close the day, and report.
                       </p>
                     </article>
@@ -572,7 +576,7 @@ export default function MmsClientPage() {
                     </article>
                     <article className="palm-leaf" data-index="4">
                       <span className="palm-leaf-numeral">Page 05</span>
-                      <h3>Mutt Operations Context</h3>
+                      <h3>Matha Operations Context</h3>
                       <span className="palm-leaf-rule" aria-hidden="true"></span>
                       <p>
                         Seva catalog, Panchangam reference, scheduled activities, projects, and
@@ -668,7 +672,7 @@ export default function MmsClientPage() {
           <div
             className="audience-visual reveal"
             role="img"
-            aria-label="Trustees, accountants, and office volunteers working together in a Mutt office"
+            aria-label="Trustees, accountants, and office volunteers working together in a Matha office"
           ></div>
           <div className="audience-grid">
             <article className="audience-card reveal">
@@ -727,7 +731,7 @@ export default function MmsClientPage() {
           </div>
           <div className="faq-list reveal">
             <details className="faq-item" open>
-              <summary>Is the system only suitable for very large Mutts?</summary>
+              <summary>Is the system only suitable for very large Mathas?</summary>
               <p>
                 No. The same core problems—mixed payment modes, scattered records, festival peaks,
                 and committee reporting—appear at different scales. The system can begin with the
@@ -780,7 +784,7 @@ export default function MmsClientPage() {
             <span className="impact-kicker">For your next committee conversation</span>
             <h2>Ready to Show Your Committee?</h2>
             <p>
-              Book a calm, practical walkthrough mapped to your Mutt's funds, people, approvals,
+              Book a calm, practical walkthrough mapped to your Matha's funds, people, approvals,
               daily entries, and reporting questions.
             </p>
             <a className="cta-btn" href="#contact">
@@ -905,85 +909,41 @@ export default function MmsClientPage() {
             </p>
           </div>
 
-          <div className="testimonial-grid">
-            <blockquote className="testimonial-card reveal">
-              <div className="testimonial-author">
-                <span className="testimonial-avatar" aria-hidden="true">
-                  TA
-                </span>
-                <div className="testimonial-person">
-                  <strong>Trust Administrator</strong>
-                  <span>A Mutt in Mylapore, Chennai</span>
-                </div>
-              </div>
-              <p className="testimonial-quote">
-                Donation entries, seva bookings, and expense records now stay in one place. Our
-                monthly trustee meeting takes minutes, not hours.
-              </p>
-              <span className="testimonial-mark" aria-hidden="true">
-                ❞
-              </span>
-            </blockquote>
-
-            <blockquote className="testimonial-card testimonial-card--featured reveal">
-              <div className="testimonial-topline">
-                <span className="testimonial-deployment">Client deployment</span>
-                <span className="testimonial-rating">Daily-use proof</span>
-              </div>
-              <div className="testimonial-author">
-                <span className="testimonial-avatar" aria-hidden="true">
-                  SR
-                </span>
-                <div className="testimonial-person">
-                  <strong>Sri Raghavendra Mutt</strong>
-                  <span>Nanganallur, Chennai</span>
-                </div>
-              </div>
-              <span className="testimonial-divider" aria-hidden="true"></span>
-              <p className="testimonial-quote">
+          <figure className="voice reveal">
+            <span className="voice-mark" aria-hidden="true">
+              &ldquo;
+            </span>
+            <blockquote className="voice-quote">
+              <p>
                 Daily collections, sevas, and reports are clear at a glance now. What used to take a
                 full day of reconciliation takes minutes.
               </p>
-              <div
-                className="testimonial-impact"
-                aria-label="Reconciliation reduced from one day to minutes"
-              >
-                <span className="testimonial-impact-item">
-                  <strong>1 day</strong>
-                  <span>Before</span>
-                </span>
-                <span className="testimonial-impact-arrow" aria-hidden="true">
-                  →
-                </span>
-                <span className="testimonial-impact-item">
-                  <strong>Minutes</strong>
-                  <span>With Aram ERP</span>
-                </span>
-              </div>
-              <span className="testimonial-mark" aria-hidden="true">
-                ❞
-              </span>
             </blockquote>
-
-            <blockquote className="testimonial-card reveal">
-              <div className="testimonial-author">
-                <span className="testimonial-avatar" aria-hidden="true">
-                  SC
-                </span>
-                <div className="testimonial-person">
-                  <strong>Seva Committee</strong>
-                  <span>A Mutt in Triplicane, Chennai</span>
-                </div>
-              </div>
-              <p className="testimonial-quote">
-                Sankalpam details and seva schedules stay organized even during peak festival days,
-                when everything used to run on paper.
-              </p>
-              <span className="testimonial-mark" aria-hidden="true">
-                ❞
+            <figcaption className="voice-author">
+              <span className="voice-avatar" aria-hidden="true">
+                SR
               </span>
-            </blockquote>
-          </div>
+              <span className="voice-person">
+                <strong>Sri Raghavendra Mutt</strong>
+                <span>Nanganallur, Chennai &middot; Client deployment</span>
+              </span>
+            </figcaption>
+            <div className="voice-shift" aria-label="Reconciliation reduced from one day to minutes">
+              <div className="voice-shift-step">
+                <small>Before</small>
+                <strong>1 full day</strong>
+                <span>Manual reconciliation</span>
+              </div>
+              <div className="voice-shift-line" aria-hidden="true">
+                <i />
+              </div>
+              <div className="voice-shift-step voice-shift-step--after">
+                <small>With Aram ERP</small>
+                <strong>Minutes</strong>
+                <span>Clear at a glance</span>
+              </div>
+            </div>
+          </figure>
         </section>
 
         <section className="contact-section section-shell" id="contact">
@@ -1036,8 +996,8 @@ export default function MmsClientPage() {
                     <input type="text" id="cf-name" name="name" required autoComplete="name" />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="cf-mutt">Mutt / Institution</label>
-                    <input type="text" id="cf-mutt" name="mutt" autoComplete="organization" />
+                    <label htmlFor="cf-matha">Matha / Institution</label>
+                    <input type="text" id="cf-matha" name="matha" autoComplete="organization" />
                   </div>
                 </div>
                 <div className="form-row">
@@ -1073,7 +1033,7 @@ export default function MmsClientPage() {
           <div className="footer-column footer-brand">
             <h3 className="footer-title">Aram ERP</h3>
             <p className="footer-desc">
-              Secure donation, ledger, people, and operational management for Mutt trusts.
+              Secure donation, ledger, people, and operational management for Matha institutions.
             </p>
             <p className="footer-contact">
               <strong>Email:</strong>{" "}

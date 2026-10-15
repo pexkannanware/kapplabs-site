@@ -1,8 +1,8 @@
 /*
  * ARAM ERP for Temples — design tokens.
  * Palette: white pages with one soft warm tint for alternate sections, charcoal for the
- * hero and footer, Sacred Maroon (#58110C, from the ARAM brand guide) as the only strong
- * accent, with muted gold used sparingly for detail.
+ * hero and footer, deep temple green as the only strong accent, with muted gold used
+ * sparingly for detail. Sacred Maroon (#58110C, from the ARAM brand guide) is kept for the logo mark.
  */
 :root {
   /* Daylight */
@@ -19,8 +19,9 @@
   --night-2: #1c1815;
 
   /* Accents */
-  --maroon: #58110c;
-  --maroon-2: #74201a;
+  --green: #1f4a36;
+  --green-2: #2d6449;
+  --brand: #58110c;
   --gold: #a88a57;
   --gold-soft: #c9b48d;
   --bronze: #8c6a45;

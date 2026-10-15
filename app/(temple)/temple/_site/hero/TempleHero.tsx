@@ -65,7 +65,6 @@ export function TempleHero() {
         </div>
 
         <div className="hero__opening" aria-hidden="true">
-          <p className="hero__place">Brihadisvara Temple <span>Thanjavur, Tamil Nadu</span></p>
           <p className="hero__cue"><span />Scroll to enter</p>
         </div>
 

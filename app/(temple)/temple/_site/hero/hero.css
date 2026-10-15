@@ -40,13 +40,6 @@
 
 /* Opening — the film's title card */
 .hero__opening { position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: clamp(0, 1 - var(--p) / .03, 1); }
-.hero__place {
-  position: absolute; left: var(--gutter); bottom: clamp(32px, 7vh, 72px);
-  display: grid; gap: 6px;
-  font-family: var(--display); font-size: clamp(.8rem, .7rem + .3vw, 1rem); letter-spacing: .28em; text-transform: uppercase;
-  animation: hero-in 1.8s var(--ease) .2s both;
-}
-.hero__place span { font-family: var(--serif); font-style: italic; font-size: 1.15em; letter-spacing: .02em; text-transform: none; color: var(--on-dark-2); }
 .hero__cue {
   position: absolute; left: 50%; bottom: clamp(28px, 6vh, 64px); translate: -50% 0;
   display: grid; justify-items: center; gap: 14px;
@@ -136,7 +129,6 @@
 
 @media (max-width: 640px) {
   .hero { --runway: 820svh; }
-  .hero__place { bottom: auto; top: calc(var(--header-h) + 20px); }
   .beat { bottom: clamp(56px, 10vh, 96px); }
   .hero__finale { top: auto; bottom: clamp(48px, 8vh, 80px); transform: none; }
   .hero__actions .button { width: 100%; justify-content: center; }

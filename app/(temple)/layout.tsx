@@ -2,25 +2,37 @@ import type { Metadata, Viewport } from "next";
 import "./temple/_site/styles/tokens.css";
 import "./temple/_site/styles/base.css";
 
+const title = "Temple Management Software | ARAM ERP for Temples";
 const description =
-  "ARAM ERP is an integrated ERP platform for temples: devotees, sevas, panchangam, annadhanam, cashbook, banking, finance, projects and events, assets, and role-based security and governance in one place.";
+  "Manage sevas, devotees, donations, annadhanam, panchangam, cashbook and banking in one temple ERP. Clear records, role-based access, audit-ready reports.";
 const shareDescription =
   "Devotees, sevas, panchangam, annadhanam, cashbook, banking, finance, assets and governance — managed from one integrated platform built for temples.";
 
 export const metadata: Metadata = {
-  title: "ARAM ERP | Temple Management ERP Software",
+  title,
   description,
-  icons: { icon: "/temple/favicon.png", apple: "/temple/apple-touch-icon.png" },
+  keywords:
+    "temple management software, temple ERP, seva booking software, archana booking system, temple donation software, panchangam software, annadhanam management, temple accounting software, devotee management, ARAM ERP",
+  icons: {
+    icon: [
+      { url: "/aram/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/aram/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/aram/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     siteName: "ARAM ERP",
-    title: "ARAM ERP | Temple Management ERP Software",
+    title,
     description: shareDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "ARAM ERP | Temple Management ERP Software",
+    title,
     description: shareDescription,
+  },
+  other: {
+    "google-site-verification": "Pp4PpLCcCgL5lwqPahGkXtoH9uASwL-8sphTHOUtMJ0",
   },
 };
 

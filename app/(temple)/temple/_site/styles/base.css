@@ -21,7 +21,7 @@ h1, h2, h3, h4, p, ol, ul, figure { margin: 0; }
 ol, ul { padding: 0; list-style: none; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
 a { color: inherit; }
-::selection { background: var(--maroon); color: var(--paper); }
+::selection { background: var(--green); color: var(--paper); }
 
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 2px; }
 
@@ -50,7 +50,7 @@ a { color: inherit; }
   font-family: var(--serif); font-weight: 500; font-size: var(--statement);
   line-height: 1.1; letter-spacing: -.01em; text-wrap: balance;
 }
-.statement em { font-style: italic; color: var(--maroon); }
+.statement em { font-style: italic; color: var(--green); }
 .lede { font-size: var(--text-lg); line-height: 1.65; color: var(--ink-2); max-width: 34em; text-wrap: pretty; }
 
 /* Shared section rhythm */
@@ -64,11 +64,11 @@ a { color: inherit; }
 .button {
   display: inline-flex; align-items: center; gap: 12px; min-height: 48px;
   padding: 0 24px; border-radius: 999px;
-  background: var(--maroon); color: var(--paper);
+  background: var(--green); color: var(--paper);
   font-size: var(--text-sm); font-weight: 500; letter-spacing: .02em; text-decoration: none;
   transition: background-color .3s var(--ease), transform .3s var(--ease);
 }
-.button:hover { background: var(--maroon-2); }
+.button:hover { background: var(--green-2); }
 .button svg { transition: transform .3s var(--ease); }
 .button:hover svg { transform: translateX(3px); }
 .button--light { background: var(--paper); color: var(--ink); }

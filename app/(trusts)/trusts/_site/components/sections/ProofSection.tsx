@@ -5,7 +5,7 @@ import { Icon } from '../Icon'
 // Qualitative proof only — no customer counts, statistics or certifications until verified.
 const points: [string, string][] = [
   ['One connected platform', 'Finance, donations, people, projects and records share one system.'],
-  ['Part of the ARAM ERP family', 'A sibling of ARAM ERP for Mutts, from the same team at Kapplabs.'],
+  ['Part of the ARAM ERP family', 'A sibling of ARAM ERP for Mathas, from the same team at Kapplabs.'],
   ['Role-based access', 'Visibility shaped around each person’s responsibilities.'],
   ['Traceable records', 'Information stays connected for review and audit.'],
 ]

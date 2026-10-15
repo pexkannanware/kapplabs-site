@@ -17,7 +17,6 @@ export const nav: [label: string, href: string][] = [
   ['How we work', '#how'],
   ['Reviews', '#reviews'],
   ['FAQ', '#faq'],
-  ['Contact', '#contact'],
 ]
 
 /** Overview points beside the dashboard. */

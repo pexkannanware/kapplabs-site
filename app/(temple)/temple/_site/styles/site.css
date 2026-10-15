@@ -10,7 +10,7 @@
 
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; min-height: 44px; }
 .brand__mark { width: 44px; height: 22px; background: currentColor; mask: center / contain no-repeat; -webkit-mask: center / contain no-repeat; }
-.site-header[data-tone='light'] .brand__mark { background: var(--maroon); }
+.site-header[data-tone='light'] .brand__mark { background: var(--brand); }
 .brand__word { display: grid; white-space: nowrap; font-family: var(--display); font-weight: 600; font-size: .95rem; letter-spacing: .18em; line-height: 1.1; }
 .brand__tag { font-family: var(--sans); font-weight: 400; font-size: .625rem; letter-spacing: .28em; text-transform: uppercase; opacity: .7; }
 
@@ -37,7 +37,7 @@
   .site-nav__cta { display: inline-flex !important; align-self: flex-start; }
   /* backdrop-filter would make the header the containing block for the fixed overlay. */
   .site-header.is-open { color: var(--ink); background: transparent !important; backdrop-filter: none !important; box-shadow: none !important; }
-  .site-header.is-open .brand__mark { background: var(--maroon); }
+  .site-header.is-open .brand__mark { background: var(--brand); }
   .site-header.is-open .site-nav { opacity: 1; visibility: visible; }
 }
 

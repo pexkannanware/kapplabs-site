@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Cinzel, Geist, Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,9 +9,14 @@ const inter = Inter({
   display: "swap",
 });
 
+// Shared ARAM wordmark fonts (same as the Temples and Trusts logos).
+const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel", weight: ["600"], display: "swap" });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", weight: ["400"], display: "swap" });
+
 export const metadata = {
-  title: "Aram ERP",
-  description: "Aram ERP for Mathas",
+  title: "Matha Management Software | ARAM ERP for Mathas",
+  description:
+    "ARAM ERP brings a matha's donations, sevas, payments, banking, people and committee-ready reports into one secure cloud workspace.",
 };
 
 export const viewport: Viewport = {
@@ -22,7 +27,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${cinzel.variable} ${geist.variable}`}>
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );

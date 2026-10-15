@@ -1,16 +1,24 @@
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "ARAM ERP | One Platform. Every Faith.",
+  title: "ARAM ERP – Management Software for Temples, Mathas & Trusts",
   description:
-    "ARAM ERP is one unified platform for Mutts, Temples and Trusts—bringing finances, donations, people, assets and daily operations together.",
+    "One platform for temples, mathas and trusts to manage donations, sevas, accounts, people and reports—clear, secure and built for faith institutions.",
   keywords:
-    "ARAM ERP, ERP for temples, ERP for trusts, ERP for mutts, donation management, institution management",
-  icons: { icon: "/aram/assets/aram-logo.png" },
+    "ARAM ERP, temple management software, matha management software, trust management software, religious institution ERP, donation management software, seva management, devasthanam software India",
+  icons: {
+    icon: [
+      { url: "/aram/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/aram/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/aram/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
-    title: "ARAM ERP — One Platform. Every Faith.",
-    description: "Simplifying operations for Mutts, Temples and Trusts.",
+    siteName: "ARAM ERP",
+    title: "ARAM ERP – Management Software for Temples, Mathas & Trusts",
+    description:
+      "One platform for temples, mathas and trusts to manage donations, sevas, accounts, people and reports.",
   },
   twitter: { card: "summary_large_image" },
 };
@@ -25,6 +33,10 @@ export default function AramRootLayout({ children }: { children: React.ReactNode
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-site-verification"
+          content="Pp4PpLCcCgL5lwqPahGkXtoH9uASwL-8sphTHOUtMJ0"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link

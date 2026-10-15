@@ -1,18 +1,24 @@
 import type { Metadata, Viewport } from "next";
 import "./trusts/_site/index.css";
 
-const title = "Aram ERP | ERP Software for Trusts";
+const title = "Trust Management Software | ARAM ERP for Trusts";
 const shareDescription =
   "Manage donations, finance, people, projects, documents, compliance and reporting in one connected system.";
 
 export const metadata: Metadata = {
   title,
   description:
-    "Aram ERP is a purpose-built ERP platform for Trusts, helping manage donations, finance, people, projects, documents, compliance and reporting in one connected system.",
+    "Manage donations, fund accounting, projects, people, documents and compliance for your trust in one connected system with audit trails.",
   keywords:
-    "ERP software for Trusts, Trust management software, Trust ERP, donation management, Trust accounting, fund management, project tracking, role-based access, audit trail, Aram ERP",
-  icons: { icon: { url: "/trusts/favicon.svg", type: "image/svg+xml" } },
-  openGraph: { type: "website", siteName: "Aram ERP", title, description: shareDescription },
+    "trust management software, trust ERP, charitable trust software, trust accounting software, NGO fund management, donor management software, project tracking for trusts, trust compliance software, ARAM ERP",
+  icons: {
+    icon: [
+      { url: "/aram/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/aram/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/aram/apple-touch-icon.png",
+  },
+  openGraph: { type: "website", siteName: "ARAM ERP", title, description: shareDescription },
   twitter: { card: "summary_large_image", title, description: shareDescription },
 };
 
@@ -30,7 +36,7 @@ export default function TrustsRootLayout({ children }: { children: React.ReactNo
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Geist:wght@400&family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap"
         />
       </head>
       <body>{children}</body>
