@@ -1,0 +1,113 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kapplabs-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DO_HOST: ${{ secrets.DO_HOST || vars.DO_HOST || '178.128.102.157' }}
+      DO_USER: ${{ secrets.DO_USER || vars.DO_USER || 'root' }}
+      DO_APP_DIR: ${{ vars.DO_APP_DIR || '/var/www/kapplabs' }}
+      DO_PROXY_DIR: ${{ vars.DO_PROXY_DIR || '/var/www/s4hana-elevate/kannanwarerevamp' }}
+      DO_SITE_URL: ${{ vars.DO_SITE_URL || 'https://kapplabs.com/' }}
+      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL || 'https://mms.kapplabs.com' }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Validate deployment files and recovery behavior
+        run: |
+          bash -n scripts/deploy-digitalocean.sh
+          docker compose -f docker-compose.production.yml config --quiet
+          python3 -B -m unittest discover -s tests -v
+
+      - name: Configure SSH
+        env:
+          DO_SSH_PRIVATE_KEY: ${{ secrets.DO_SSH_PRIVATE_KEY }}
+          DO_SSH_KNOWN_HOSTS: ${{ secrets.DO_SSH_KNOWN_HOSTS }}
+        run: |
+          set -Eeuo pipefail
+          : "${DO_SSH_PRIVATE_KEY:?Set the DO_SSH_PRIVATE_KEY repository secret}"
+          : "${DO_SSH_KNOWN_HOSTS:?Set the DO_SSH_KNOWN_HOSTS repository secret}"
+          [[ "$DO_HOST" =~ ^[a-zA-Z0-9.-]+$ ]]
+          [[ "$DO_USER" =~ ^[a-zA-Z0-9_-]+$ ]]
+          [[ "$DO_APP_DIR" =~ ^/[a-zA-Z0-9_/-]+$ ]]
+          [[ "$DO_PROXY_DIR" =~ ^/[a-zA-Z0-9_/-]+$ ]]
+          [[ "$DO_SITE_URL" =~ ^https://[a-zA-Z0-9./_-]+$ ]]
+          install -m 700 -d "$RUNNER_TEMP/deploy-ssh"
+          printf '%s\n' "$DO_SSH_PRIVATE_KEY" | tr -d '\r' > "$RUNNER_TEMP/deploy-ssh/key"
+          printf '%s\n' "$DO_SSH_KNOWN_HOSTS" > "$RUNNER_TEMP/deploy-ssh/known_hosts"
+          chmod 600 "$RUNNER_TEMP/deploy-ssh/"*
+          ssh-keygen -y -P '' -f "$RUNNER_TEMP/deploy-ssh/key" >/dev/null
+          cat > "$RUNNER_TEMP/deploy-ssh/config" <<EOF
+          Host droplet
+            HostName $DO_HOST
+            User $DO_USER
+            IdentityFile $RUNNER_TEMP/deploy-ssh/key
+            UserKnownHostsFile $RUNNER_TEMP/deploy-ssh/known_hosts
+            StrictHostKeyChecking yes
+            IdentitiesOnly yes
+            BatchMode yes
+            ConnectTimeout 15
+            ServerAliveInterval 15
+            ServerAliveCountMax 4
+          EOF
+
+      - name: Detect Droplet architecture
+        id: platform
+        run: |
+          set -Eeuo pipefail
+          arch=$(ssh -F "$RUNNER_TEMP/deploy-ssh/config" droplet uname -m)
+          case "$arch" in
+            x86_64) echo 'platform=linux/amd64' >> "$GITHUB_OUTPUT" ;;
+            aarch64|arm64) echo 'platform=linux/arm64' >> "$GITHUB_OUTPUT" ;;
+            *) echo "Unsupported Droplet architecture: $arch" >&2; exit 1 ;;
+          esac
+
+      - name: Set up emulation
+        uses: docker/setup-qemu-action@v4
+        with:
+          platforms: arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build release image
+        env:
+          BUILD_PLATFORM: ${{ steps.platform.outputs.platform }}
+        run: |
+          set -Eeuo pipefail
+          docker buildx build --platform "$BUILD_PLATFORM" --load \
+            --build-arg "NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL" \
+            --tag "kapplabs-web:$GITHUB_SHA" .
+          docker save "kapplabs-web:$GITHUB_SHA" | gzip -1 > "$RUNNER_TEMP/image.tar.gz"
+
+      - name: Transfer and deploy
+        run: |
+          set -Eeuo pipefail
+          release_dir="/tmp/kapplabs-deploy-$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          ssh -F "$RUNNER_TEMP/deploy-ssh/config" droplet "umask 077; mkdir '$release_dir'"
+          scp -F "$RUNNER_TEMP/deploy-ssh/config" \
+            "$RUNNER_TEMP/image.tar.gz" docker-compose.production.yml scripts/deploy-digitalocean.sh \
+            "droplet:$release_dir/"
+          ssh -F "$RUNNER_TEMP/deploy-ssh/config" droplet \
+            "bash '$release_dir/deploy-digitalocean.sh' '$release_dir' '$DO_APP_DIR' '$DO_PROXY_DIR' '$GITHUB_SHA' '$DO_SITE_URL'"
+
+      - name: Remove runner credentials and archive
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/deploy-ssh" "$RUNNER_TEMP/image.tar.gz"

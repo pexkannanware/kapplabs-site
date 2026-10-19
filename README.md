@@ -37,6 +37,9 @@ npm run dev        # http://localhost:3000
 `kapplabs-web` container (`nginx:alpine` serving `out/`) on the shared droplet, behind
 kannanware's front-door nginx — see [DEPLOY.md](DEPLOY.md).
 
+Pushes to `main` deploy through GitHub Actions after the SSH secrets and existing Droplet
+paths are configured. See [automatic deployment setup](DEPLOY.md#automatic-deployment-on-pushes-to-main).
+
 To try the production container locally:
 
 ```bash

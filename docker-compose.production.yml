@@ -1,0 +1,17 @@
+services:
+  web:
+    image: kapplabs-web:latest
+    container_name: kapplabs-web
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1/"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    networks:
+      - shared_web
+
+networks:
+  shared_web:
+    external: true

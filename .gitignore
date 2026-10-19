@@ -5,6 +5,7 @@ out
 .env*.local
 .env
 .DS_Store
+__pycache__/
 
 # Original Vite projects; their code now lives in app/ and they are kept on disk only.
 Aram-home-main/
