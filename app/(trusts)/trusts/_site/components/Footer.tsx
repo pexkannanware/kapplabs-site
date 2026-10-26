@@ -40,7 +40,7 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© {YEAR} ARAM ERP · A Kapplabs product</span>
+          <span>© {YEAR} ARAM ERP · <a className="footer-product-credit" href={links.kapplabs}>A Kapplabs product</a></span>
           <span className="footer-legal"><a href={links.privacy}>Privacy</a><a href={links.terms}>Terms</a><a href="#home">Back to top ↑</a></span>
         </div>
       </div>

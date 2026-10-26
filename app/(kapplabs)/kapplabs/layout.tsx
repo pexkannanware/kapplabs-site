@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Kapplabs - AI Powered Apps",
-  description: "Kapplabs - AI Powered Apps",
+  title: "Kapplabs · SaaS & AI solutions by Kannanware",
+  description: "Kapplabs is a SaaS and AI solutions company. A Kannanware company.",
 };
 
 export default function KapplabsLayout({ children }: { children: React.ReactNode }) {

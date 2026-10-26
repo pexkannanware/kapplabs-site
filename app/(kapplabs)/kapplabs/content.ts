@@ -188,7 +188,7 @@ export const PLATFORM_THESIS_DEPTH = {
     { label: "IP-led", desc: "Revenue scales with product adoption; knowledge compounds in the platform" },
   ],
   products: [
-    { name: "Aram ERP", href: "/aram", note: "Trust and temple operations" },
+    { name: "ARAM ERP", href: "/aram", note: "Trust and temple operations" },
     { name: "Office of the CFO AI Agents", href: "/kapplabs/office-of-the-cfo-ai-agents", note: "Executive finance workflows" },
   ],
 } as const;
@@ -298,7 +298,7 @@ export const LAUNCH_DEPTH = {
   intro:
     "Kapplabs is opening early access for teams that need real-time governance, auditable intelligence, and workflow-fit products — not another generic SaaS suite that takes quarters to configure.",
   audiences: [
-    { title: "Trust & temple operations", body: "Aram ERP, seva scheduling, donations, and compliance-ready reporting." },
+    { title: "Trust & temple operations", body: "ARAM ERP, seva scheduling, donations, and compliance-ready reporting." },
     { title: "Finance & executive teams", body: "CFO workflow agents, approvals, and live operational clarity." },
     { title: "Transformation leaders", body: "Organizations replacing spreadsheet chains with AI-native systems of record." },
   ],
@@ -365,7 +365,7 @@ export const PRIVACY_SECTIONS = [
   },
   {
     title: "Contact",
-    body: "Privacy questions can be directed to hello@kannanware.com.",
+    body: "Privacy questions can be directed to kapplabs@kannanware.com.",
   },
 ] as const;
 
@@ -392,13 +392,13 @@ export const TERMS_SECTIONS = [
   },
   {
     title: "Contact",
-    body: "Terms questions can be directed to hello@kannanware.com.",
+    body: "Terms questions can be directed to kapplabs@kannanware.com.",
   },
 ] as const;
 
 export const FOOTER_LINKS = {
   products: [
-    { href: "/aram", label: "Aram ERP" },
+    { href: "/aram", label: "ARAM ERP" },
     { href: "/kapplabs/office-of-the-cfo-ai-agents", label: "CFO AI Agents" },
   ],
   platform: [

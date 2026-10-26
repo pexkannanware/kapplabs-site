@@ -18,7 +18,7 @@ export function TempleFooter() {
         </div>
       </div>
       <div className="wrap site-footer__base">
-        <p>© {new Date().getFullYear()} ARAM ERP. A product of <a href={contact.site}>Kapplabs</a>.</p>
+        <p>© {new Date().getFullYear()} ARAM ERP. <a className="footer-product-credit" href={contact.site}>A product of Kapplabs.</a></p>
         <p lang="ta" className="site-footer__tamil" title="அறம் (aram) — virtue">அறம்</p>
       </div>
     </footer>

@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     ],
     apple: "/aram/apple-touch-icon.png",
   },
+  other: {
+    "google-site-verification": "Pp4PpLCcCgL5lwqPahGkXtoH9uASwL-8sphTHOUtMJ0",
+  },
   openGraph: { type: "website", siteName: "ARAM ERP", title, description: shareDescription },
   twitter: { card: "summary_large_image", title, description: shareDescription },
 };

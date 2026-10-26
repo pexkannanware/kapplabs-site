@@ -17,7 +17,7 @@ export function BeforeAfter() {
   const fromPointer = (event: PointerEvent) => {
     const bounds = stageRef.current?.getBoundingClientRect()
     if (!bounds) return
-    setReveal(Math.round(Math.min(Math.max((event.clientX - bounds.left) / bounds.width, 0), 1) * 100))
+    setReveal(Math.round((1 - Math.min(Math.max((event.clientX - bounds.left) / bounds.width, 0), 1)) * 100))
   }
   const state = reveal > 60 ? 'after' : reveal < 40 ? 'before' : 'between'
 

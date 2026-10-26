@@ -983,7 +983,7 @@ export default function MmsClientPage() {
                   </span>
                   <div>
                     <strong>Product</strong>
-                    <span>Aram ERP · A products of Kapplabs</span>
+                    <span><a className="footer-product-credit" href="https://kapplabs.com/">Aram ERP · A product of Kapplabs</a></span>
                   </div>
                 </li>
               </ul>
@@ -1039,7 +1039,7 @@ export default function MmsClientPage() {
               <strong>Email:</strong>{" "}
               <a href="mailto:kapplabs@kannanware.com">kapplabs@kannanware.com</a>
             </p>
-            <p className="footer-contact">Aram ERP - A Kapplabs Product</p>
+            <p className="footer-contact"><a className="footer-product-credit" href="https://kapplabs.com/">Aram ERP - A Kapplabs Product</a></p>
           </div>
 
           <div className="footer-column">
@@ -1111,7 +1111,7 @@ export default function MmsClientPage() {
         <div className="footer-divider"></div>
 
         <div className="footer-bottom">
-          <p>&copy; 2026 Kapplabs Aram ERP is a Kapplabs product.</p>
+          <p>&copy; 2026 Kapplabs Aram ERP is <a className="footer-product-credit" href="https://kapplabs.com/">a Kapplabs product</a>.</p>
           <p className="footer-tagline">Unified ERP for Faith, Service & Trust Management</p>
         </div>
       </footer>

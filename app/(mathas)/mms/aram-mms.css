@@ -724,6 +724,7 @@
       .footer-contact {
         margin: 0; font-size: 0.85rem; color: rgba(255,250,242,0.6); line-height: 1.5;
       }
+      .aram-mms .footer-product-credit { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
       .footer-contact strong {
         color: var(--soft-gold);
       }
@@ -760,6 +761,7 @@
       .footer-bottom p {
         margin: 0.4rem 0; font-size: 0.85rem; color: rgba(255,250,242,0.6);
       }
+      .footer-bottom .footer-product-credit { color: inherit; }
       .footer-tagline {
         font-style: italic; color: var(--soft-gold); margin-top: 0.8rem !important;
       }

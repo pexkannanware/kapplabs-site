@@ -13,7 +13,7 @@ export default function LaunchPage() {
         <p>{LAUNCH_DEPTH.intro}</p>
         <div className={styles.ctaButtons}>
           <Link className={styles.btnPrimaryWhite} href="/aram">
-            View Aram ERP →
+            View ARAM ERP →
           </Link>
           <Link className={styles.btnOutlineWhite} href="/contact">
             Talk to founders

@@ -8,7 +8,7 @@ export const contact = {
   email: 'kapplabs@kannanware.com',
   phone: '+91 91507 66678',
   phoneHref: 'tel:+919150766678',
-  site: 'https://www.kapplabs.com/',
+  site: 'https://kapplabs.com/',
 }
 
 export const nav: [label: string, href: string][] = [

@@ -2,7 +2,7 @@
   min-height: 100vh;
   background: transparent;
   color: #07152f;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
 }
 
@@ -547,4 +547,54 @@
   .ctaPanel {
     padding: 32px 24px;
   }
+}
+
+/* ── Harmonisation with the home page design ── */
+
+.page {
+  color: var(--k-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.eyebrow,
+.sectionEyebrow {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-code);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--k-blue);
+}
+
+.hero h1,
+.sectionIntro h2,
+.surfaceHeader h2 {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.highlight {
+  background: linear-gradient(92deg, #0a3fd1 0%, var(--k-blue) 45%, #22a6f0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.primaryBtn {
+  border-radius: 10px;
+  background: var(--k-ink);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 6px 16px -6px rgba(11, 18, 32, 0.45);
+}
+
+.primaryBtn:hover,
+.primaryBtn:focus-visible {
+  background: #1a2336;
+}
+
+.secondaryBtn {
+  border-radius: 10px;
+  border-color: var(--k-line-strong);
+  background: #ffffff;
+  color: var(--k-ink);
 }

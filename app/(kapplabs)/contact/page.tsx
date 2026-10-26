@@ -23,9 +23,9 @@ export default function ContactPage() {
           <p>Share your workflow context and we will help identify the right Kapplabs product fit.</p>
           <a
             className={styles.btnPrimary}
-            href="mailto:hello@kannanware.com?subject=Kapplabs%20%E2%80%94%20Request%20briefing"
+            href="mailto:kapplabs@kannanware.com?subject=Kapplabs%20%E2%80%94%20Request%20briefing"
           >
-            Email hello@kannanware.com
+            Email kapplabs@kannanware.com
           </a>
         </div>
         <div className={styles.contactCard}>
@@ -33,7 +33,7 @@ export default function ContactPage() {
           <p>See live Kapplabs products or review the platform story before you reach out.</p>
           <div className={styles.contactLinks}>
             <Link className={styles.cardLink} href="/aram">
-              Aram ERP →
+              ARAM ERP →
             </Link>
             <Link className={styles.cardLink} href="/platform-thesis">
               Platform thesis →
